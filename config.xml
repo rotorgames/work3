@@ -9,6 +9,7 @@
 	
 	<!--<gap:plugin name="org.apache.cordova.inappbrowser" />-->
 	<gap:plugin name="org.apache.cordova.device" />
+	<gap:plugin name="com.pushwoosh.plugins.pushwoosh" />
 	
     <name>Medmind</name>
 
