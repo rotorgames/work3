@@ -24,6 +24,7 @@
     </author>
 	
 	<gap:platform name="android" />
+	<gap:platform name="wp" />
 	<!--<gap:platform name="ios" />-->
 	<preference name="phonegap-version" value="3.3.0" />
 	<content src="index.html" />
