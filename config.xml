@@ -28,7 +28,7 @@
 	<preference name="phonegap-version" value="3.3.0" />
 	<content src="index.html" />
    	<access origin="*" subdomains="true" />
-	<preference name="Orientation" value="portrait" />
+	<preference name="orientation" value="portrait" />
     <!--<preference name="Fullscreen" value="true" />
     <preference name="WebViewBounce" value="true" />-->
 </widget>
