@@ -29,7 +29,7 @@
 	<content src="index.html" />
    	<access origin="*" subdomains="true" />
 	<preference name="orientation" value="portrait" />
-	<preference name="HideKeyboardFormAccessoryBar" value="true"/>
+	<preference name="hide-keyboard-form-accessory-bar" value="true"/>
     <!--<preference name="Fullscreen" value="true" />
     <preference name="WebViewBounce" value="true" />-->
 </widget>
