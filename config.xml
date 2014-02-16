@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
     <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.medmind.standalone"
+        id        = "com.medmind.online"
         versionCode="13" 
         version   = "0.1.2">
 
@@ -13,7 +13,7 @@
 	<gap:plugin name="org.apache.cordova.dialogs" />
 	<gap:plugin name="com.phonegap.plugins.pushplugin" />
 	
-    <name>Medmind-StandAlone</name>
+    <name>Medmind</name>
 
     <description>
         An example for phonegap build docs. 
