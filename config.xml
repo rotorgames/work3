@@ -25,7 +25,7 @@
 	
 	<gap:platform name="android" />
 	<!--<gap:platform name="ios" />-->
-	<preference name="phonegap-version" value="3.3.0" />
+	<preference name="phonegap-version" value="3.1.0" />
 	<content src="index.html" />
    	<access origin="*" subdomains="true" />
 	<preference name="orientation" value="portrait" />
