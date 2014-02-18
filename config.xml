@@ -11,7 +11,7 @@
 	<!--<gap:plugin name="com.pushwoosh.plugins.pushwoosh" />-->
 	<gap:plugin name="org.apache.cordova.device" />
 	<gap:plugin name="org.apache.cordova.dialogs" />
-	<gap:plugin name="com.phonegap.plugins.pushplugin" />
+	<gap:plugin name="com.phonegap.plugins.pushplugin" version="2.1.0" />
 	
     <name>Medmind</name>
 
@@ -29,7 +29,6 @@
 	<content src="index.html" />
    	<access origin="*" subdomains="true" />
 	<preference name="orientation" value="portrait" />
-	<preference name="hide-keyboard-form-accessory-bar" value="true"/>
     <!--<preference name="Fullscreen" value="true" />
     <preference name="WebViewBounce" value="true" />-->
 </widget>
