@@ -13,7 +13,7 @@
 	<gap:plugin name="org.apache.cordova.dialogs" />
 	<gap:plugin name="org.apache.cordova.network-information" />
 	<gap:plugin name="com.phonegap.plugins.pushplugin" version="2.1.1" />
-	<gap:plugin name="nl.x-services.plugins.calendar" />
+	<gap:plugin name="com.badrit.calendar" />
 	
     <name>Medmind</name>
 
