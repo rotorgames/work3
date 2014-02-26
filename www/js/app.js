@@ -1,4 +1,4 @@
-//document.addEventListener("deviceready",initService, false); //Раскоментировать в релизе!!!!!!
+document.addEventListener("deviceready",initService, false); //Раскоментировать в релизе!!!!!!
 //window.addEventListener("resize",resize, false);
 document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
 document.addEventListener('click', function (e) { e.preventDefault(); }, false);
@@ -33,11 +33,9 @@ function initApp(){
 	manifest = getManifest();
 	getFrame();
 	getTemplate();
-	require(["main","menubar","favorites","favorite","content","categories","list","wrapper"], function() {
-		content("add", "News");
-		inApp = true;
-		localStorage.setItem("init", true);
-		});
+	content("add", "News");
+	inApp = true;
+	localStorage.setItem("init", true);
 	}
 	
 function getManifest(){
