@@ -2,7 +2,7 @@
     font-family: MyHelvetica; /* Гарнитура шрифта */
     src: local("Helvetica Neue"), 
 		 local("HelveticaNeue"), 
-		 url('fonts/HelveticaNeueMedium.ttf') format('truetype'); /* Путь к файлу со шрифтом */
+		 url('/www/fonts/HelveticaNeueMedium.ttf') format('truetype'); /* Путь к файлу со шрифтом */
    }
 
 * {
@@ -65,7 +65,7 @@ a {
 	float:left; 
 	width:60px; 
 	height:20px; 
-	background:url(img/back.png) no-repeat center; 
+	background:url(/www/img/back.png) no-repeat center; 
 	background-size: 100px 50px;
 	}
 	
@@ -73,7 +73,7 @@ a {
 	float:right;
 	height:50px;
 	width:50px;
-	background:url(/img/favorite-header.png) no-repeat center; 
+	background:url(/www/img/favorite-header.png) no-repeat center; 
 	background-size: 50px 50px;
 	}
 
