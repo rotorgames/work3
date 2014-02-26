@@ -137,28 +137,28 @@
 	
 .li-list-favorite-enabled{
 	height:15px;
-	background:url(/img/favorite-enabled.png) no-repeat center; 
+	background:url(/www/img/favorite-enabled.png) no-repeat center; 
 	background-size: 15px;
 	margin-top:3px;
 	}
 	
 .li-list-favorite-disabled{
 	height:15px;
-	background:url(/img/favorite-disabled.png) no-repeat center; 
+	background:url(/www/img/favorite-disabled.png) no-repeat center; 
 	background-size: 15px;
 	margin-top:3px;
 	}
 	
 .li-list-go-enabled{
 	height:15px;
-	background:url(/img/go-enabled.png) no-repeat center; 
+	background:url(/www/img/go-enabled.png) no-repeat center; 
 	background-size: 15px;
 	margin-top:3px;
 	}
 	
 .li-list-go-disabled{
 	height:15px;
-	background:url(/img/go-disabled.png) no-repeat center; 
+	background:url(/www/img/go-disabled.png) no-repeat center; 
 	background-size: 15px;
 	margin-top:3px;
 	}
