@@ -11,7 +11,7 @@ var TAPBAR = "tapbar-main";
 var inApp = false;
 
 function initApp(){
-	document.addEventListener("online", setOnline, false);
+	//document.addEventListener("online", setOnline, false);
 	
 	scrolls = new Scrolls();
 	
