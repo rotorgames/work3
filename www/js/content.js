@@ -115,11 +115,10 @@ function setActivity(element){
 }
 	
 function contentConnectionError(error){
-	console.log(error);
 	if(error.status == 0){
 		navigator.notification.alert('Отсутствует подключение к Интернету', function(){
 			var db = pagination.states[0].data.db;
-			content(db);
+			favorites(db);
 			},'Ошибка');
 		}
 	}
