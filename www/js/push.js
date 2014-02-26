@@ -35,7 +35,7 @@ function tokenHandler(e){
 	}
 	
 function errorHandler(e){
-	alert('Ошибка регистрации устройства');
+	//alert('Ошибка регистрации устройства');
 	}
 									
 function onNotification(e){
