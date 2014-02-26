@@ -1,4 +1,4 @@
-document.addEventListener("deviceready",initService, false); //Раскоментировать в релизе!!!!!!
+//document.addEventListener("deviceready",initService, false); //Раскоментировать в релизе!!!!!!
 //window.addEventListener("resize",resize, false);
 document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
 document.addEventListener('click', function (e) { e.preventDefault(); }, false);
@@ -12,7 +12,10 @@ var inApp = false;
 
 function initApp(){
 	document.addEventListener("online", setOnline, false);
-	
+	if(navigator.connection.type == 'none' && !localStorage.getItem("init")){
+		alert('Для первого запуска требуется подключение к интернету');
+		return false;
+	}
 	scrolls = new Scrolls();
 	
 	pagination = new pageNavigator('categories', null, true);
@@ -30,8 +33,11 @@ function initApp(){
 	manifest = getManifest();
 	getFrame();
 	getTemplate();
-	inApp = true;
-	content("add", "News");
+	require(["main","menubar","favorites","favorite","content","categories","list","wrapper"], function() {
+		content("add", "News");
+		inApp = true;
+		localStorage.setItem("init", true);
+		});
 	}
 	
 function getManifest(){

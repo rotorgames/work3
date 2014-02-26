@@ -1,6 +1,5 @@
 function favorites(type, db){
 	var dblist = [];
-	console.log(type);
 	if(type == "add"){
 		favoritesAdd(function(){
 			var title = "Избранное";
