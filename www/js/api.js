@@ -48,7 +48,7 @@ API.userRegistration = function(data, callback, error){
 	
 API.setFavorite = function(db, id, callback, error){
 	if(navigator.connection.type == 'none'){
-		alert('Что бы добавить в Избранное подключитесь к интернету');
+		alert('Требуется подключение к интернету');
 		}else{
 		this.ajax("content/setFavorite", {db:db, id:id}, callback, contentConnectionError);
 		}
@@ -56,7 +56,7 @@ API.setFavorite = function(db, id, callback, error){
 	
 API.setActivity = function(db, id, callback, error){
 	if(navigator.connection.type == 'none'){
-		alert('Что бы добавить Мероприятие подключитесь к интернету');
+		alert('Требуется подключение к интернету');
 		}else{
 		this.ajax("content/setActivity", {db:db, id:id}, callback, contentConnectionError);
 		}

@@ -11,7 +11,7 @@ var TAPBAR = "tapbar-main";
 var inApp = false;
 
 function initApp(){
-	//document.addEventListener("online", setOnline, false);
+	document.addEventListener("online", setOnline, false);
 	
 	scrolls = new Scrolls();
 	
@@ -187,6 +187,12 @@ function links(e){
    			window.open(e.srcElement.href, '_system');
 			e.preventDefault();
 		}
+}
+
+function setOnline(){
+	if(!authService){
+		initService();
+	}
 }
 
 /*
