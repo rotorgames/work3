@@ -30,7 +30,7 @@ function setFavorite(element){
 			API.setFavorite(dbName, pagData.id, function(response){
 				db.transaction(function(tx) {
 					tx.executeSql("INSERT INTO  "+dbName+" (id ,header ,main ,date ,time, go)VALUES (?,  ?,  ?,  ?, ?, ?)", [pagData.id, pagData.header, pagData.main, pagData.date, pagData.time, pagData.go], null, null);
-					element.children[0].src = "/www/img/tapbar/delete.png";
+					element.children[0].src = "www/img/tapbar/delete.png";
 					element.children[1].innerHTML = "Удалить";
 				});
 			});
@@ -38,7 +38,7 @@ function setFavorite(element){
 			API.setFavorite(dbName, pagData.id, function(){
 				db.transaction(function(tx) {
 					tx.executeSql("DELETE FROM "+dbName+" WHERE id = "+pagData.id, [], null, null);
-					element.children[0].src = "/www/img/tapbar/favorite.png";
+					element.children[0].src = "www/img/tapbar/favorite.png";
 					element.children[1].innerHTML = "Сохранить";
 				})
 			})
@@ -81,7 +81,7 @@ function setActivity(element){
 		if(response.event == "add"){
 			pagination.state.data.go = 1;
 			window.Calendar.createEvent(pagData.header, pagData.location, pagData.main, cStartDate, cEndDate, function(){
-				element.children[0].src = "/www/img/tapbar/go-enabled.png";
+				element.children[0].src = "www/img/tapbar/go-enabled.png";
 				element.children[1].innerHTML = "Иду";
 				
 				var cdb = openDatabase("favorites", "0.1", "Favorites", 200000);
@@ -97,7 +97,7 @@ function setActivity(element){
 		}else{
 			pagination.state.data.go = 0;
 			window.Calendar.deleteEvent(pagData.header, pagData.location, pagData.main, cStartDate, cEndDate, function(){
-				element.children[0].src = "/www/img/tapbar/go-disabled.png";
+				element.children[0].src = "www/img/tapbar/go-disabled.png";
 				element.children[1].innerHTML = "Пойти";
 				
 				var cdb = openDatabase("favorites", "0.1", "Favorites", 200000);

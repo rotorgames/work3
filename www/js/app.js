@@ -5,7 +5,7 @@ document.addEventListener('click', function (e) { e.preventDefault(); }, false);
 document.addEventListener('touchend', links, false);
 //window.addEventListener("popstate", pageChange, false);
 
-var url = '/www/';
+var url = 'www/';
 var App, manifest;
 var TAPBAR = "tapbar-main";
 var inApp = false;
