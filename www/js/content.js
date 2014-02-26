@@ -116,5 +116,5 @@ function setActivity(element){
 	
 function contentConnectionError(error){
 	var db = pagination.states[0].data.db;
-	favorites(db);
+	favorites("add", db);
 }
