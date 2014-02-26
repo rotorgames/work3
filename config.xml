@@ -28,7 +28,7 @@
 	
 	<icon src="Icon2android.png"   gap:platform="android" />
 	<icon src="Icon2ios.png"   gap:platform="ios" />
-	<gap:splash src="splash.png" />
+	<!--<gap:splash src="splash.png" />-->
 	
 	<gap:platform name="android" />
 	<gap:platform name="ios" />
