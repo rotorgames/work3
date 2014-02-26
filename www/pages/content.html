@@ -1,0 +1,28 @@
+<div id="categories" class="page">
+    <div class="search-wrapp">
+      	<div onclick="inputFocus(this)">
+            <input onkeyup="categories('update', pagination.state.data.db, this.value)" disabled="disabled" type="search" placeholder="Поиск" class="search" />
+        </div>
+    </div>
+    <div id="categories-scroll" class="scroll">
+        <div id="categories-wrapp">
+        </div>
+    </div>
+</div>
+<div id="clist" class="page hide">
+    <div class="search-wrapp">
+        <div onclick="inputFocus(this)">
+            <input onkeyup="clist('update', pagination.state.data.db,  pagination.state.data.cid, pagination.state.data.title, this.value)" disabled="disabled" type="search" placeholder="Поиск" class="search" />
+        </div>
+    </div>
+     <div id="clist-scroll" class="scroll">
+        <div id="clist-wrapp">
+        </div>
+    </div>
+</div>
+<div id="wrapper" class="page hide">
+    <div id="wrapper-scroll" class="scroll">
+        <div id="wrapper-wrapp">
+        </div>
+    </div>
+</div>

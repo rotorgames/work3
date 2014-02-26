@@ -1,0 +1,92 @@
+@font-face {
+    font-family: MyHelvetica; /* Гарнитура шрифта */
+    src: local("Helvetica Neue"), 
+		 local("HelveticaNeue"), 
+		 url('www/fonts/HelveticaNeueMedium.ttf') format('truetype'); /* Путь к файлу со шрифтом */
+   }
+
+* {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	overflow:hidden;
+	font-family: MyHelvetica;
+	}
+
+html, body {
+	margin:0px;
+	height:100%;
+	width:100%;
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	}
+	
+a:hover, a:focus {
+	outline: none;
+	color:white;
+	background-color:#0C3;
+	}
+
+a {
+	color:#007aff;
+	}
+	
+#menubar{
+	height:50px;
+	background-color:#ffffff;
+	}
+	
+#tapbar-wrapp{
+	width:100%;
+	position:absolute;
+	bottom:0px;
+	background-color:#f9f9f9;
+	border-top:solid 1px #cfcfcf;
+	padding-top:7px;
+	padding-bottom:4px;
+	font-size:10px;
+	color:#929292;
+	z-index:99;
+	}
+
+#menubar-wrapp{
+	text-align:center;
+	white-space: nowrap;
+	opacity:0;
+	-webkit-transition-property:all;
+	-webkit-transition-duration: 0.2s;
+	-webkit-transition-timing-function:ease-out;
+	}
+	
+#menubar-btn-left{
+	display:none;
+	margin:15px;
+	float:left; 
+	width:60px; 
+	height:20px; 
+	background:url(www/img/back.png) no-repeat center; 
+	background-size: 100px 50px;
+	}
+	
+#menubar-btn-right{
+	float:right;
+	height:50px;
+	width:50px;
+	background:url(www/img/favorite-header.png) no-repeat center; 
+	background-size: 50px 50px;
+	}
+
+#menubar-title{
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	padding-top:15px;
+	font-weight:bold;
+	font-size:16px;
+	}
+	
+#menubar-title small{
+	color:#838383;
+	font-size:14px;
+	}
+
