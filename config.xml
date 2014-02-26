@@ -2,8 +2,8 @@
     <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.medmind.standalone"
-        versionCode="14" 
-        version   = "0.1.3">
+        versionCode="15" 
+        version   = "0.1.5">
 
     <!-- versionCode is optional and Android only -->
 	
@@ -16,7 +16,7 @@
 	<gap:plugin name="com.phonegap.plugins.pushplugin" version="2.1.1" />
 	<gap:plugin name="com.badrit.calendar" />
 	
-    <name>Medmind</name>
+    <name>Medmind Stand-Alone</name>
 
     <description>
         Alpha version 
@@ -32,7 +32,7 @@
 	
 	<gap:platform name="android" />
 	<gap:platform name="ios" />
-	<preference name="phonegap-version" value="3.3.0" />
+	<preference name="phonegap-version" value="3.4.0" />
 	<content src="index.html" />
    	<access origin="*" subdomains="true" />
 	<preference name="orientation" value="portrait" />
