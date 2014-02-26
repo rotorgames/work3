@@ -98,7 +98,7 @@
 	float:right;
 	width:10px; 
 	height:17px; 
-	background:url(www/img/to.png) no-repeat;
+	background:url(file:///android_asset/www/www/img/to.png) no-repeat;
 	background-size: 10px;
 	}
 	
@@ -137,28 +137,28 @@
 	
 .li-list-favorite-enabled{
 	height:15px;
-	background:url(www/img/favorite-enabled.png) no-repeat center; 
+	background:url(file:///android_asset/www/www/img/favorite-enabled.png) no-repeat center; 
 	background-size: 15px;
 	margin-top:3px;
 	}
 	
 .li-list-favorite-disabled{
 	height:15px;
-	background:url(www/img/favorite-disabled.png) no-repeat center; 
+	background:url(file:///android_asset/www/www/img/favorite-disabled.png) no-repeat center; 
 	background-size: 15px;
 	margin-top:3px;
 	}
 	
 .li-list-go-enabled{
 	height:15px;
-	background:url(www/img/go-enabled.png) no-repeat center; 
+	background:url(file:///android_asset/www/www/img/go-enabled.png) no-repeat center; 
 	background-size: 15px;
 	margin-top:3px;
 	}
 	
 .li-list-go-disabled{
 	height:15px;
-	background:url(www/img/go-disabled.png) no-repeat center; 
+	background:url(file:///android_asset/www/www/img/go-disabled.png) no-repeat center; 
 	background-size: 15px;
 	margin-top:3px;
 	}
