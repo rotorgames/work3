@@ -1,5 +1,10 @@
 function content(type, db){
 	
+	if(navigator.connection.type == 'none'){
+		favorites("add", db);
+		return false;
+	}
+	
 	pagination.reset('categories', {db:db}, true);
 	scrolls.destroyAll();
 		
