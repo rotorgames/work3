@@ -16,6 +16,10 @@ function initApp(){
 		alert('Для первого запуска требуется подключение к интернету');
 		return false;
 	}
+	if(!localStorage.getItem("fontSize")){
+		localStorage.setItem("fontSize", 15)
+	}
+	document.getElementsByTagName('body')[0].style.fontSize = localStorage.getItem("fontSize")+"px";
 	scrolls = new Scrolls();
 	
 	pagination = new pageNavigator('categories', null, true);
@@ -23,7 +27,11 @@ function initApp(){
 		setTimeout(function(){
 			document.getElementById(state.nextPage+'-wrapp').innerHTML = "";
 		},400);
-		setTitle(state.data.title, state.data.back);
+		if(typeof state.data.btnFavorite == "undefined"){
+			setTitle(state.data.title, state.data.back);
+		}else{
+			setTitle(state.data.title, state.data.back, false);
+		}
 		setTapbar(state.data.tapbar);
 		var data = pagination.state.data;
 		window[pagination.state.page]('update', data.db, data.cid);
@@ -79,10 +87,11 @@ function getTemplate(){
 		}
 	}
 	
-function setTitle(title, back){
+function setTitle(title, back, favorites){
 	var header = document.getElementById("menubar-title");
 	var wrapp = document.getElementById("menubar-wrapp");
 	var btnBack = document.getElementById("menubar-btn-left");
+	var btnFavorites = document.getElementById("menubar-btn-right");
 	if(header.innerHTML != title){
 		wrapp.style.opacity = 0;
 		setTimeout(function(){
@@ -92,6 +101,11 @@ function setTitle(title, back){
 				btnBack.style.display = "none";
 			}else{
 				btnBack.style.display = "block";
+			}
+			if(typeof favorites == "boolean" && !favorites){
+				btnFavorites.style.display = "none";
+			}else{
+				btnFavorites.style.display = "block";
 			}
 		}, 200);
 	}
@@ -107,6 +121,8 @@ function setTapbar(type, param){
 				var newsColor = "#929292";
 				var activity = "";
 				var activityColor = "#929292";
+				var settings = "";
+				var settingsColor = "#929292";
 				switch(pagination.state.data.db){
 					case "News":
 					news = "-enabled";
@@ -116,12 +132,18 @@ function setTapbar(type, param){
 					activity = "-enabled";
 					activityColor = "#ff8a00";
 					break;
+					case "Settings":
+					settings = "-enabled";
+					settingsColor = "#929292";
+					break;
 				}
 				tapbar.innerHTML = data
 					.replace("%news%", news)
 					.replace("%activity%", activity)
+					.replace("%settings%", settings)
 					.replace("%news-color%", newsColor)
-					.replace("%activity-color%", activityColor);
+					.replace("%activity-color%", activityColor)
+					.replace("%settings-color%", settingsColor);
 			})
 		break;
 		case "tapbar-news":
@@ -197,6 +219,13 @@ function setOnline(){
 	if(!authService){
 		initService();
 	}
+}
+
+function setFontSize(element, size){
+	document.getElementsByClassName("li-themes-check")[0].className = "";
+	document.getElementsByTagName('body')[0].style.fontSize = size+"px";
+	localStorage.setItem("fontSize", size)
+	element.children[0].className = "li-themes-check";
 }
 
 /*

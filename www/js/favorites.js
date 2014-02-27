@@ -1,16 +1,18 @@
 function favorites(type, db){
-	var dblist = [];
+	if(db != "News" && db != "Activity"){return false};
 	if(type == "add"){
+		dblist = [];
 		favoritesAdd(function(){
 			var title = "Избранное";
-			pagination.reset('favorites', {db:db,title:title,tapbar:"tapbar-main",back:false}, true);
+			pagination.reset('favorites', {db:db,title:title,tapbar:"tapbar-main",back:false, btnFavorite: false}, true);
 			scrolls.destroyAll();
-			setTitle(title, false);
+			setTitle(title, false, false);
 			setTapbar("tapbar-main");
 			scrolls.add('favorites', tap);
 		});
 	}else
 	if(type == "update"){
+		dblist = [];
 		favoritesAdd(function(){
 			scrolls.scrolls.favorites.iscroll.refresh();
 		})
@@ -53,7 +55,12 @@ function favorites(type, db){
 								.replace("%time%", info.time)
 								.replace("%go%", go);
 						}
-						conteiner.innerHTML = content;
+						if(result.rows.length){
+							conteiner.innerHTML = content;
+						}else
+						{
+							conteiner.innerHTML = "<h4>Список пуст</h4>";
+						}
 						callback(conteiner);
 					}
 				}
@@ -79,7 +86,7 @@ function favorites(type, db){
 				},500);
 			var id = element.getAttribute('data-id');
 			var name = element.getAttribute('data-name');
-			favorite("add", db, id, name, dblist);
+			favorite("add", db, id, name);
 			}
 		}
 }

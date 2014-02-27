@@ -67,7 +67,12 @@ function categories(type, db, search){
 						content += template.replace(/%name%/g, data[i].name).replace("%id%", data[i].id);
 						content = content.replace("%count%", count);
 					}
-				container.innerHTML = content;
+				if(data.length){
+					container.innerHTML = content;
+				}else
+				{
+					container.innerHTML = "<h4>Список пуст</h4>";
+				}
 				callback(container);
 				}
 			}

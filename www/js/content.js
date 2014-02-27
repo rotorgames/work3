@@ -34,7 +34,7 @@ function setFavorite(element){
 		if(result.rows.length == 0){
 			API.setFavorite(dbName, pagData.id, function(response){
 				db.transaction(function(tx) {
-					tx.executeSql("INSERT INTO  "+dbName+" (id ,header ,main ,date ,time, go)VALUES (?,  ?,  ?,  ?, ?, ?)", [pagData.id, pagData.header, pagData.main, pagData.date, pagData.time, pagData.go], null, null);
+					tx.executeSql("INSERT INTO  "+dbName+" (id ,header ,main ,date ,time, go, location)VALUES (?,  ?,  ?,  ?, ?, ?, ?)", [pagData.id, pagData.header, pagData.main, pagData.date, pagData.time, pagData.go, pagData.location], null, null);
 					element.children[0].src = "www/img/tapbar/delete.png";
 					element.children[1].innerHTML = "Удалить";
 				});
@@ -52,16 +52,18 @@ function setFavorite(element){
 	
 	function error(tx, error){
 		db.transaction(function(tx) {
-			tx.executeSql("CREATE TABLE "+dbName+" (id int(11) ,header text ,main text ,date text ,time text ,go int(1) ,PRIMARY KEY (id))", [], null, null);
+			tx.executeSql("CREATE TABLE "+dbName+" (id int(11) ,header text ,main text ,date text ,time text ,go int(1) ,location text ,PRIMARY KEY (id))", [], null, null);
 			getFavorite();
 		});
 	}
 		
 }
-
+var enabledActivity = false;
 function setActivity(element){
+	if(enabledActivity){return false};
 	var pagData = pagination.state.data;
 	var dbName = pagData.db;
+	var fnc = function(){};
 	API.setActivity(dbName, pagData.id, function(response){
 		if(/-/.test(pagData.time)){
 			var times = pagData.time.split("-");
@@ -82,23 +84,22 @@ function setActivity(element){
 		
 		var cStartDate = new Date(parseInt(startDate[2]),parseInt(startDate[1])-1,parseInt(startDate[0]),parseInt(startTime[0]),parseInt(startTime[1]));
 		var cEndDate = new Date(parseInt(endDate[2]),parseInt(endDate[1])-1,parseInt(endDate[0]),parseInt(endTime[0]),parseInt(endTime[1]));
-
+		console.log(pagData, 'pgd', response);
 		if(response.event == "add"){
 			pagination.state.data.go = 1;
 			window.Calendar.createEvent(pagData.header, pagData.location, pagData.main, cStartDate, cEndDate, function(){
 				element.children[0].src = "www/img/tapbar/go-enabled.png";
 				element.children[1].innerHTML = "Иду";
-				
 				var cdb = openDatabase("favorites", "0.1", "Favorites", 200000);
 				cdb.transaction(function(tx) {
-					tx.executeSql("SELECT * FROM "+dbName+" WHERE id = "+pagData.id, [], success, null);
+					tx.executeSql("SELECT * FROM "+dbName+" WHERE id = "+pagData.id, [], success, fnc);
 					function success(tx, result){
 						if(result.rows.length){
-							tx.executeSql("UPDATE  "+dbName+" SET  go =  1 WHERE  id = "+pagData.id, [], null, null);
+							tx.executeSql("UPDATE  "+dbName+" SET  go =  1 WHERE  id = "+pagData.id, [], fnc, fnc);
 						}
 					}
 				});
-			}, null);
+			}, fnc);
 		}else{
 			pagination.state.data.go = 0;
 			window.Calendar.deleteEvent(pagData.header, pagData.location, pagData.main, cStartDate, cEndDate, function(){
@@ -107,19 +108,37 @@ function setActivity(element){
 				
 				var cdb = openDatabase("favorites", "0.1", "Favorites", 200000);
 				cdb.transaction(function(tx) {
-					tx.executeSql("SELECT * FROM "+dbName+" WHERE id = "+pagData.id, [], success, null);
+					tx.executeSql("SELECT * FROM "+dbName+" WHERE id = "+pagData.id, [], success, fnc);
 					function success(tx, result){
 						if(result.rows.length){
-							tx.executeSql("UPDATE  "+dbName+" SET  go =  0 WHERE  id = "+pagData.id, [], null, null);
+							tx.executeSql("UPDATE  "+dbName+" SET  go =  0 WHERE  id = "+pagData.id, [], fnc, fnc);
 						}
 					}
 				});
-			}, null);
+			}, fnc);
 		}
 	});
+}
+
+function sendMail(){
+	if(navigator.connection.type != 'none'){
+		navigator.notification.prompt("Введите email получателя", promptCallback, "Поделиться", ["Отправить","Отмена"], "Email");
+		function promptCallback(data){
+			var pagData = pagination.state.data;
+			if(data.buttonIndex == 1){
+				if(data.input1 != "Email"){
+					API.sendMail(pagData.db, pagData.id, data.input1, function(){});
+				}else{
+					Alert("Введите Email!");
+				}
+			}
+		}
+	}else{
+		alert('Требуется подключение к интернету');
+	}
 }
 	
 function contentConnectionError(error){
 	var db = pagination.states[0].data.db;
-	favorites(db);
+	favorites("add" ,db);
 }

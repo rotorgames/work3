@@ -1,4 +1,4 @@
-function favorite(type, db, id, name, dblist){
+function favorite(type, db, id, name){
 	
 	if(id == "null"){return false};
 	
@@ -46,6 +46,7 @@ function favorite(type, db, id, name, dblist){
 			pagData.main = data.main;
 			pagData.time = data.time;
 			pagData.date = data.date;
+			pagData.location = data.location;
 			pagData.go = data.go;
 			if(db == "News"){
 				setTapbar('tapbar-favorite-news', data);

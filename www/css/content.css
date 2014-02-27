@@ -1,7 +1,11 @@
+h4{
+	text-align:center;
+	}
+
 .page{
 	position:absolute;
-	top:50px;
-	bottom: 58px;
+	top:51px;
+	bottom: 57px;
 	left:0;
 	margin:0;
 	background-color: #FFF;
@@ -15,7 +19,6 @@
 .hide{
 	-webkit-transform: translate(100%, 0px) translateZ(0px);
 	width:100%;
-	top:50px;
 	left:0;
 	}
 	
@@ -98,8 +101,17 @@
 	float:right;
 	width:10px; 
 	height:17px; 
-	background:url(../img/to.png) no-repeat;
+	background:url(../www/img/to.png) no-repeat;
 	background-size: 10px;
+	}
+	
+.li-themes-check{
+	margin-right:15px;
+	float:right;
+	width:19px; 
+	height:17px; 
+	background:url(../www/img/check.png) no-repeat;
+	background-size: 18px;
 	}
 	
 .li-themes-new{
@@ -137,28 +149,28 @@
 	
 .li-list-favorite-enabled{
 	height:15px;
-	background:url(../img/favorite-enabled.png) no-repeat center; 
+	background:url(../www/img/favorite-enabled.png) no-repeat center; 
 	background-size: 15px;
 	margin-top:3px;
 	}
 	
 .li-list-favorite-disabled{
 	height:15px;
-	background:url(../img/favorite-disabled.png) no-repeat center; 
+	background:url(../www/img/favorite-disabled.png) no-repeat center; 
 	background-size: 15px;
 	margin-top:3px;
 	}
 	
 .li-list-go-enabled{
 	height:15px;
-	background:url(../img/go-enabled.png) no-repeat center; 
+	background:url(../www/img/go-enabled.png) no-repeat center; 
 	background-size: 15px;
 	margin-top:3px;
 	}
 	
 .li-list-go-disabled{
 	height:15px;
-	background:url(../img/go-disabled.png) no-repeat center; 
+	background:url(../www/img/go-disabled.png) no-repeat center; 
 	background-size: 15px;
 	margin-top:3px;
 	}

@@ -64,7 +64,12 @@ function clist(type, db, cid, name, search){
 					.replace("%go%", go);
 				}
 			
-			element.innerHTML = content;
+			if(data.length){
+				element.innerHTML = content;
+			}else
+			{
+				element.innerHTML = "<h4>Список пуст</h4>";
+			}
 			
 			pagination.enabled = true;
 			callback(element);

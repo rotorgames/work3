@@ -6,10 +6,10 @@ function syncdb(){
 		function error(){
 			API.getNews(function(contents){
 				db.transaction(function(tx) {
-					tx.executeSql("CREATE TABLE News (id int(11) ,header text ,main text ,date text ,time text ,go int(1) ,PRIMARY KEY (id))", [], bnd, bnd);
+					tx.executeSql("CREATE TABLE News (id int(11) ,header text ,main text ,date text ,time text ,go int(1) ,location text ,PRIMARY KEY (id))", [], bnd, bnd);
 					for(var i = 0; i < contents.length; i++){
 						var content = contents[i];
-						tx.executeSql("INSERT INTO  News (id ,header ,main ,date ,time, go)VALUES (?,  ?,  ?,  ?, ?, ?)", [content.id, content.header, content.main, content.date, content.time, content.go], bnd, bnd);
+						tx.executeSql("INSERT INTO  News (id ,header ,main ,date ,time, go, location)VALUES (?,  ?,  ?,  ?, ?, ?, ?)", [content.id, content.header, content.main, content.date, content.time, content.go, content.location], bnd, bnd);
 					}
 				});
 			})
@@ -20,10 +20,10 @@ function syncdb(){
 		function error(tx){
 			API.getActivity(function(contents){
 				db.transaction(function(tx) {
-					tx.executeSql("CREATE TABLE Activity (id int(11) ,header text ,main text ,date text ,time text ,go int(1) ,PRIMARY KEY (id))", [], bnd, bnd);
+					tx.executeSql("CREATE TABLE Activity (id int(11) ,header text ,main text ,date text ,time text ,go int(1) ,location text ,PRIMARY KEY (id))", [], bnd, bnd);
 					for(var i = 0; i < contents.length; i++){
 						var content = contents[i];
-						tx.executeSql("INSERT INTO  Activity (id ,header ,main ,date ,time, go)VALUES (?,  ?,  ?,  ?, ?, ?)", [content.id, content.header, content.main, content.date, content.time, content.go], bnd, bnd);
+						tx.executeSql("INSERT INTO  Activity (id ,header ,main ,date ,time, go, location)VALUES (?,  ?,  ?,  ?, ?, ?, ?)", [content.id, content.header, content.main, content.date, content.time, content.go, content.location], bnd, bnd);
 					}
 				});
 			})

@@ -5,6 +5,7 @@ API = {
 API.ajax = function(url, data, callback, error){
 	$.ajax({
 		type:"POST",
+		timeout: 20000,
 		url: API.url+url,
 		dataType: "json",
 		cache: false,
@@ -74,5 +75,29 @@ API.getActivity = function(callback){
 		//contentConnectionError();
 	}else{
 		this.ajax("content/getActivity", {}, callback, contentConnectionError);
+	}
+}
+
+API.getSettingsCategories = function(db, callback, error){
+	if(navigator.connection.type == 'none'){
+		alert('Требуется подключение к интернету');
+		}else{
+		this.ajax("content/getSettingsCategories", {db:db}, callback, error);
+		}
+	}
+	
+API.setSettingsCategories = function(db, id, callback, error){
+	if(navigator.connection.type == 'none'){
+		alert('Требуется подключение к интернету');
+		}else{
+		this.ajax("content/setSettingsCategories", {db:db, id:id}, callback, function(e){console.log(e)});
+		}
+	}
+
+API.sendMail = function(db, id, email,callback){
+	if(navigator.connection.type == 'none'){
+		//contentConnectionError();
+	}else{
+		this.ajax("content/sendMail", {db:db,id:id,email:email}, callback, contentConnectionError);
 	}
 }

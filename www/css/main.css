@@ -2,7 +2,7 @@
     font-family: MyHelvetica; /* Гарнитура шрифта */
     src: local("Helvetica Neue"), 
 		 local("HelveticaNeue"), 
-		 url('../fonts/HelveticaNeueMedium.ttf') format('truetype'); /* Путь к файлу со шрифтом */
+		 url('../www/fonts/HelveticaNeueMedium.ttf') format('truetype'); /* Путь к файлу со шрифтом */
    }
 
 * {
@@ -35,6 +35,7 @@ a {
 #menubar{
 	height:50px;
 	background-color:#ffffff;
+	border-bottom: solid 1px #b0b0b0;
 	}
 	
 #tapbar-wrapp{
@@ -65,7 +66,7 @@ a {
 	float:left; 
 	width:60px; 
 	height:20px; 
-	background:url(../img/back.png) no-repeat center; 
+	background:url(../www/img/back.png) no-repeat center; 
 	background-size: 100px 50px;
 	}
 	
@@ -73,7 +74,7 @@ a {
 	float:right;
 	height:50px;
 	width:50px;
-	background:url(../img/favorite-header.png) no-repeat center; 
+	background:url(../www/img/favorite-header.png) no-repeat center; 
 	background-size: 50px 50px;
 	}
 
@@ -89,4 +90,17 @@ a {
 	color:#838383;
 	font-size:14px;
 	}
+	
+#settings{
+	background-color: #eeeef3;
+	}
 
+.choiceSettings{
+	background-color:#FFF;
+	margin-bottom:35px;
+	}
+	
+.titleSettings{
+	margin:10px 15px;
+	padding:0;
+	}
