@@ -129,7 +129,7 @@ function sendMail(){
 				if(data.input1 != "Email"){
 					API.sendMail(pagData.db, pagData.id, data.input1, function(){});
 				}else{
-					Alert("Введите Email!");
+					alert("Введите Email!");
 				}
 			}
 		}
