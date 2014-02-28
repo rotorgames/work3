@@ -1,7 +1,7 @@
 authService = false;
 function initService(){
 	if(navigator.connection.type != "none"){
-		var pushNotification = window.plugins.pushNotification;
+		pushNotification = window.plugins.pushNotification;
 		if(device.platform == "android" || device.platform == "Android"){
 			pushNotification.register(
 				successHandler,
