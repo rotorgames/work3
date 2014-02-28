@@ -54,6 +54,7 @@ function registrationService(regid, platform){
 	API.userRegistration(data, success, error);
 	function success(response){
 		if(response.event == "success"){
+			pushNotification.setApplicationIconBadgeNumber(null, null, 0);
 			syncdb();
 			authService = true;
 			if(!inApp){
