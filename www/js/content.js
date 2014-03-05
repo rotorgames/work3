@@ -129,12 +129,12 @@ function sendMail(){
 				if(data.input1 != "Email"){
 					API.sendMail(pagData.db, pagData.id, data.input1, function(){});
 				}else{
-					alert("Введите Email!");
+					navigator.notification.alert("Введите Email!");
 				}
 			}
 		}
 	}else{
-		alert('Требуется подключение к интернету');
+		navigator.notification.alert('Требуется подключение к интернету');
 	}
 }
 	

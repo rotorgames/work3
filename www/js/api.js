@@ -49,7 +49,7 @@ API.userRegistration = function(data, callback, error){
 	
 API.setFavorite = function(db, id, callback, error){
 	if(navigator.connection.type == 'none'){
-		alert('Требуется подключение к интернету');
+		navigator.notification.alert('Требуется подключение к интернету');
 		}else{
 		this.ajax("content/setFavorite", {db:db, id:id}, callback, contentConnectionError);
 		}
@@ -57,7 +57,7 @@ API.setFavorite = function(db, id, callback, error){
 	
 API.setActivity = function(db, id, callback, error){
 	if(navigator.connection.type == 'none'){
-		alert('Требуется подключение к интернету');
+		navigator.notification.alert('Требуется подключение к интернету');
 		}else{
 		this.ajax("content/setActivity", {db:db, id:id}, callback, contentConnectionError);
 		}
@@ -80,7 +80,7 @@ API.getActivity = function(callback){
 
 API.getSettingsCategories = function(db, callback, error){
 	if(navigator.connection.type == 'none'){
-		alert('Требуется подключение к интернету');
+		navigator.notification.alert('Требуется подключение к интернету');
 		}else{
 		this.ajax("content/getSettingsCategories", {db:db}, callback, error);
 		}
@@ -88,7 +88,7 @@ API.getSettingsCategories = function(db, callback, error){
 	
 API.setSettingsCategories = function(db, id, callback, error){
 	if(navigator.connection.type == 'none'){
-		alert('Требуется подключение к интернету');
+		navigator.notification.alert('Требуется подключение к интернету');
 		}else{
 		this.ajax("content/setSettingsCategories", {db:db, id:id}, callback, function(e){console.log(e)});
 		}
