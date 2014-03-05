@@ -1,5 +1,9 @@
 function clist(type, db, cid, name, search){
+	
+	var element = document.getElementById('clist-wrapp');
+	
 	if(type == "add"){
+		element.innerHTML = '<div class="imgPreloader" ><img src="www/img/loading.gif" height="100"></div>';
 		setTitle(name, true);
 		pagination.pushState('clist', {title: name, db:db, cid:cid, back:true, tapbar:"tapbar-main"}, false);
 		listAdd(function(container){
@@ -32,7 +36,6 @@ function clist(type, db, cid, name, search){
 			}
 		
 		function success(context, data){
-			var element = document.getElementById('clist-wrapp');
 			var template = context;
 			var content = "";
 			for(var i = 0; i < data.length; i++){
@@ -58,10 +61,11 @@ function clist(type, db, cid, name, search){
 					.replace(/%header%/g, data[i].header)
 					.replace("%date%", data[i].date)
 					.replace("%time%", data[i].time)
+					.replace("%category%", data[i].category)
 					.replace("%theme%", theme)
 					.replace("%count%", count)
 					.replace("%favorite%", favorite)
-					.replace("%go%", go);
+					.replace(/%go%/g, go);
 				}
 			
 			if(data.length){
@@ -95,7 +99,7 @@ function clist(type, db, cid, name, search){
 				},500);
 			var id = element.getAttribute('data-id');
 			var name = element.getAttribute('data-name');
-			wrapper("add", db, id, name);
+			wrapper("add", db, cid, id, name);
 			}
 		}
 	}

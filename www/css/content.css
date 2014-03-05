@@ -139,7 +139,7 @@ h4{
 	}
 	
 .li-list-new{
-	background-color:#f3f3f3;
+	background-color:#cfe2f3;
 	}
 	
 .li-list-status{
@@ -173,6 +173,10 @@ h4{
 	background:url(../img/go-disabled.png) no-repeat center; 
 	background-size: 15px;
 	margin-top:3px;
+	}
+	
+.li-list-go-body-enabled{
+	background-color: #e8f4ff;
 	}
 	
 .li-list-title{

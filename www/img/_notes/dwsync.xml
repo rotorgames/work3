@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
 <file name="to.png" server="213.219.244.158//var/www/medmind/" local="130367851060000000" remote="130370307130000000" />
-<file name="favorite-disabled.png" server="213.219.244.158//var/www/medmind/" local="130367896220000000" remote="130370307110000000" />
-<file name="favorite-enabled.png" server="213.219.244.158//var/www/medmind/" local="130367896220000000" remote="130370307110000000" />
+<file name="favorite-disabled.png" server="213.219.244.158//var/www/medmind/" local="130385030879435268" remote="130385033160000000" />
+<file name="favorite-enabled.png" server="213.219.244.158//var/www/medmind/" local="130385030763768653" remote="130385033170000000" />
 <file name="back.png" server="213.219.244.158//var/www/medmind/" local="130378212556502077" remote="130378213020000000" />
-<file name="go-disabled.png" server="213.219.244.158//var/www/medmind/" local="130375492563730260" remote="130375493470000000" />
-<file name="go-enabled.png" server="213.219.244.158//var/www/medmind/" local="130375493192766239" remote="130375493470000000" />
+<file name="go-disabled.png" server="213.219.244.158//var/www/medmind/" local="130385032867808997" remote="130385033170000000" />
+<file name="go-enabled.png" server="213.219.244.158//var/www/medmind/" local="130385032997176396" remote="130385033170000000" />
 <file name="favorite-header.png" server="213.219.244.158//var/www/medmind/" local="130378218881893869" remote="130378220080000000" />
 <file name="check.png" server="213.219.244.158//var/www/medmind/" local="130379846466538652" remote="130379846720000000" />
+<file name="loading.gif" server="213.219.244.158//var/www/medmind/" local="130380717118869932" remote="130384316150000000" />
 </dwsync>

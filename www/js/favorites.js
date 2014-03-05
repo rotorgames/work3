@@ -6,7 +6,7 @@ function favorites(type, db){
 			var title = "Избранное";
 			pagination.reset('favorites', {db:db,title:title,tapbar:"tapbar-main",back:false, btnFavorite: false}, true);
 			scrolls.destroyAll();
-			setTitle(title, false, false);
+			setTitle(title, true, false);
 			setTapbar("tapbar-main");
 			scrolls.add('favorites', tap);
 		});
@@ -51,6 +51,7 @@ function favorites(type, db){
 							content += context
 								.replace("%id%", i)
 								.replace(/%header%/g, info.header)
+								.replace("%category%", info.category)
 								.replace("%date%", info.date)
 								.replace("%time%", info.time)
 								.replace("%go%", go);

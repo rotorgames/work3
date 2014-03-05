@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="api.js" server="213.219.244.158//var/www/medmind/" local="130379947117191095" remote="130379947320000000" />
-<file name="app.js" server="213.219.244.158//var/www/medmind/" local="130379934049602434" remote="130379934250000000" />
-<file name="categories.js" server="213.219.244.158//var/www/medmind/" local="130379955588506346" remote="130379955790000000" />
+<file name="api.js" server="213.219.244.158//var/www/medmind/" local="130385107515898623" remote="130385107560000000" />
+<file name="app.js" server="213.219.244.158//var/www/medmind/" local="130385168243682054" remote="130385168290000000" />
+<file name="categories.js" server="213.219.244.158//var/www/medmind/" local="130385171250204017" remote="130385171290000000" />
 <file name="init.js" server="213.219.244.158//var/www/medmind/" local="130379051807169220" remote="130379051990000000" />
 <file name="main.js" server="213.219.244.158//var/www/medmind/" local="130372185012258724" remote="130372185100000000" />
 <file name="menubar.js" server="213.219.244.158//var/www/medmind/" local="130366785250000000" remote="130370307190000000" />
-<file name="push.js" server="213.219.244.158//var/www/medmind/" local="130379052127557596" remote="130379052310000000" />
-<file name="list.js" server="213.219.244.158//var/www/medmind/" local="130379957165081586" remote="130379957370000000" />
-<file name="content.js" server="213.219.244.158//var/www/medmind/" local="130379751325151214" remote="130379751530000000" />
-<file name="wrapper.js" server="213.219.244.158//var/www/medmind/" local="130379134367958794" remote="130379134550000000" />
-<file name="favorites.js" server="213.219.244.158//var/www/medmind/" local="130379961167160593" remote="130379961370000000" />
+<file name="push.js" server="213.219.244.158//var/www/medmind/" local="130380720831463731" remote="130380721040000000" />
+<file name="list.js" server="213.219.244.158//var/www/medmind/" local="130385171174139666" remote="130385171220000000" />
+<file name="content.js" server="213.219.244.158//var/www/medmind/" local="130385165128913899" remote="130385165220000000" />
+<file name="wrapper.js" server="213.219.244.158//var/www/medmind/" local="130385171126716954" remote="130385171170000000" />
+<file name="favorites.js" server="213.219.244.158//var/www/medmind/" local="130385159895334556" remote="130385159940000000" />
 <file name="favorite.js" server="213.219.244.158//var/www/medmind/" local="130379525340253892" remote="130379525560000000" />
-<file name="syncdb.js" server="213.219.244.158//var/www/medmind/" local="130379517728668534" remote="130379517930000000" />
+<file name="syncdb.js" server="213.219.244.158//var/www/medmind/" local="130385155955759225" remote="130385156000000000" />
 <file name="settings.js" server="213.219.244.158//var/www/medmind/" local="130379951853782711" remote="130379952060000000" />
 <file name="settingsCategories.js" server="213.219.244.158//var/www/medmind/" local="130379951300101006" remote="130379951550000000" />
 </dwsync>

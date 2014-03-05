@@ -34,7 +34,7 @@ function setFavorite(element){
 		if(result.rows.length == 0){
 			API.setFavorite(dbName, pagData.id, function(response){
 				db.transaction(function(tx) {
-					tx.executeSql("INSERT INTO  "+dbName+" (id ,header ,main ,date ,time, go, location)VALUES (?,  ?,  ?,  ?, ?, ?, ?)", [pagData.id, pagData.header, pagData.main, pagData.date, pagData.time, pagData.go, pagData.location], null, null);
+					tx.executeSql("INSERT INTO  "+dbName+" (id ,header ,main ,date ,time, go, location, category)VALUES (?,  ?,  ?,  ?, ?, ?, ?, ?)", [pagData.id, pagData.header, pagData.main, pagData.date, pagData.time, pagData.go, pagData.location, pagData.category], null, null);
 					element.children[0].src = "www/img/tapbar/delete.png";
 					element.children[1].innerHTML = "Удалить";
 				});
@@ -52,7 +52,7 @@ function setFavorite(element){
 	
 	function error(tx, error){
 		db.transaction(function(tx) {
-			tx.executeSql("CREATE TABLE "+dbName+" (id int(11) ,header text ,main text ,date text ,time text ,go int(1) ,location text ,PRIMARY KEY (id))", [], null, null);
+			tx.executeSql("CREATE TABLE "+dbName+" (id int(11) ,header text ,main text ,date text ,time text ,go int(1) ,location text , category text, PRIMARY KEY (id))", [], null, null);
 			getFavorite();
 		});
 	}

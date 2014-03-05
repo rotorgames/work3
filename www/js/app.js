@@ -25,7 +25,7 @@ function initApp(){
 	pagination = new pageNavigator('categories', null, true);
 	pagination.onBack = function(state){
 		setTimeout(function(){
-			document.getElementById(state.nextPage+'-wrapp').innerHTML = "";
+			document.getElementById(state.nextPage+'-wrapp').innerHTML = '';
 		},400);
 		if(typeof state.data.btnFavorite == "undefined"){
 			setTitle(state.data.title, state.data.back);

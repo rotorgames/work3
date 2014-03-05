@@ -25,6 +25,10 @@ pageNavigator.prototype.back = function(){
 		return false
 		}else
 	if(this.states.length == 1){
+		if(this.state.page == "favorites"){
+			content("add", this.state.data.db);
+			return false;	
+		}
 		if(device.platform != "iOS"){
 			navigator.notification.confirm('Вы действительно хотите выйти?',function(e){
 				if(e == 1){

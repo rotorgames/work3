@@ -1,4 +1,4 @@
-function wrapper(type, db, id, name){
+function wrapper(type, db, cid, id, name){
 	
 	if(id == "null"){return false};
 	
@@ -6,7 +6,8 @@ function wrapper(type, db, id, name){
 
 	setTitle(name, true);
 	if(type == "add"){
-		pagination.pushState('wrapper', {db:db,id:id,name:name}, false);
+		container.innerHTML = '<div class="imgPreloader" ><img src="www/img/loading.gif" height="100"></div>';
+		pagination.pushState('wrapper', {db:db,cid:cid,id:id,name:name}, false);
 		wrapperAdd(function(container){
 			scrolls.add('wrapper');
 		});
@@ -23,7 +24,7 @@ function wrapper(type, db, id, name){
 		HTML.get("pages/wrapper.html", getContent);
 		
 		function getContent(context){
-			API.getContent(db, id, add, contentConnectionError);
+			API.getContent(db, cid, id, add, contentConnectionError);
 			function add(data){
 				var pagData = pagination.state.data;
 				pagData.id = data.id;
@@ -32,6 +33,7 @@ function wrapper(type, db, id, name){
 				pagData.date = data.date;
 				pagData.time = data.time;
 				pagData.location = data.location;
+				pagData.category = data.category;
 				pagData.go = data.go;
 				if(db == "News"){
 					setTapbar('tapbar-news', data);

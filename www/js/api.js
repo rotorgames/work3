@@ -31,11 +31,11 @@ API.getContents = function(db, cid, search, callback, error){
 		}
 	}
 	
-API.getContent = function(db, id, callback, error){
+API.getContent = function(db, cid, id, callback, error){
 	if(navigator.connection.type == 'none'){
 		contentConnectionError();
 		}else{
-		this.ajax("content/getContent", {db:db, id: id}, callback, error);
+		this.ajax("content/getContent", {db:db, cid:cid, id: id}, callback, error);
 		}
 	}
 	

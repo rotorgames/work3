@@ -1,5 +1,7 @@
 function categories(type, db, search){
-	var name, count, container, scroll;
+	var name, count, scroll;
+	
+	var container = document.getElementById('categories-wrapp');
 	
 	if(db == "News"){
 		name = "Новости";
@@ -15,7 +17,7 @@ function categories(type, db, search){
 	
 	if(type == "add"){
 		setTitle(title, false);
-		
+		container.innerHTML = '<div class="imgPreloader" ><img src="www/img/loading.gif" height="100"></div>';
 		categoriesAdd(function(container){
 			container.style.opacity = 1;
 			scrolls.add('categories', tap);
@@ -28,7 +30,6 @@ function categories(type, db, search){
 	}
 	
 	function categoriesAdd(callback){
-		container = document.getElementById('categories-wrapp');
 		
 		API.getCategories(db,'Categories', search, getCount, contentConnectionError);
 		
@@ -48,7 +49,7 @@ function categories(type, db, search){
 					}else{
 					var count_all = "";
 					}
-				var context = template.replace("%name%", name).replace("%count%", count_all);
+				var context = template.replace(/%name%/g, name).replace("%count%", count_all);
 				show(response, context);
 				}
 			}

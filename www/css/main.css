@@ -32,6 +32,11 @@ a {
 	color:#007aff;
 	}
 	
+.imgPreloader{
+	margin-top:100px;
+	text-align:center;
+	}
+	
 #menubar{
 	height:50px;
 	background-color:#ffffff;
@@ -62,7 +67,7 @@ a {
 	
 #menubar-btn-left{
 	display:none;
-	margin:15px;
+	padding:15px;
 	float:left; 
 	width:60px; 
 	height:20px; 
