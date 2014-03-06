@@ -8,7 +8,7 @@ function categories(type, db, search){
 	}else if(db == "Activity"){
 		name = "Мероприятия";
 		}
-	var title = name+" <small>Выберите категорию<small>";
+	var title = name;
 	pagination.state.data.title = title;
 	pagination.state.data.tapbar = "tapbar-main";
 	pagination.state.data.back = false;
