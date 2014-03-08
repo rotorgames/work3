@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
     <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.medmind.standalone"
+        id        = "rotorgames.medmind.release"
         versionCode="16" 
         version   = "0.1.6">
 
@@ -16,10 +16,10 @@
 	<gap:plugin name="com.phonegap.plugins.pushplugin" version="2.1.1" />
 	<gap:plugin name="com.badrit.calendar" />
 	
-    <name>Medmind Stand-Alone</name>
+    <name>Medmind</name>
 
     <description>
-        Alpha version 
+    	Medmind 
     </description>
 
     <author href="https://rotorgames.ru" email="rotorgames@bk.ru">
@@ -29,6 +29,8 @@
 	<icon src="Icon2android.png"   gap:platform="android" />
 	<icon src="Icon2ios.png"   gap:platform="ios" />
 	<gap:splash src="splash.png" />
+	
+	<preference name="permissions" value="none"/>
 	
 	<gap:platform name="android" />
 	<gap:platform name="ios" />
