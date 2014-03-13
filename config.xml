@@ -14,7 +14,8 @@
 	<gap:plugin name="org.apache.cordova.inappbrowser" />
 	<gap:plugin name="org.apache.cordova.network-information" />
 	<gap:plugin name="com.phonegap.plugins.pushplugin" version="2.1.1" />
-	<gap:plugin name="com.badrit.calendar" />
+	<!--<gap:plugin name="com.badrit.calendar" />-->
+	<gap:plugin name="nl.x-services.plugins.calendar" />
 	
     <name>Medmind</name>
 
