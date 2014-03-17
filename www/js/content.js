@@ -84,10 +84,10 @@ function setActivity(element){
 		
 		var cStartDate = new Date(parseInt(startDate[2]),parseInt(startDate[1])-1,parseInt(startDate[0]),parseInt(startTime[0]),parseInt(startTime[1]));
 		var cEndDate = new Date(parseInt(endDate[2]),parseInt(endDate[1])-1,parseInt(endDate[0]),parseInt(endTime[0]),parseInt(endTime[1]));
-		console.log(pagData, 'pgd', response);
+
 		if(response.event == "add"){
 			pagination.state.data.go = 1;
-			window.Calendar.createEvent(pagData.header, pagData.location, pagData.main, cStartDate, cEndDate, function(){
+			window.plugins.calendar.createEvent(pagData.header, pagData.location, "", cStartDate, cEndDate, function(){
 				element.children[0].src = "www/img/tapbar/go-enabled.png";
 				element.children[1].innerHTML = "Иду";
 				var cdb = openDatabase("favorites", "0.1", "Favorites", 200000);
@@ -102,7 +102,7 @@ function setActivity(element){
 			}, fnc);
 		}else{
 			pagination.state.data.go = 0;
-			window.Calendar.deleteEvent(pagData.header, pagData.location, pagData.main, cStartDate, cEndDate, function(){
+			//window.plugins.calendar.deleteEvent(pagData.header, pagData.location, null, cStartDate, cEndDate, function(){
 				element.children[0].src = "www/img/tapbar/go-disabled.png";
 				element.children[1].innerHTML = "Пойти";
 				
@@ -115,7 +115,7 @@ function setActivity(element){
 						}
 					}
 				});
-			}, fnc);
+			//}, fnc);
 		}
 	});
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
     <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "rotorgames.medmind.beta"
-        versionCode="17" 
-        version   = "0.1.7">
+        id        = "rotorgames.medmind.release"
+        versionCode="18" 
+        version   = "0.1.8">
 
     <!-- versionCode is optional and Android only -->
 	
@@ -20,7 +20,7 @@
     <name>Medmind</name>
 
     <description>
-    	Medmind StadnAlone
+    	Medmind
     </description>
 
     <author href="https://rotorgames.ru" email="rotorgames@bk.ru">
