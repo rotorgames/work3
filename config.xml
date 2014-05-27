@@ -29,7 +29,7 @@
 	
 	<icon src="Icon2android.png"   gap:platform="android" />
 	<icon src="Icon2ios.png"   gap:platform="ios" />
-	<gap:splash src="splash.png" />
+	<!--<gap:splash src="splash.png" />-->
 	
 	<preference name="permissions" value="none"/>
 	
